@@ -17,6 +17,20 @@ pub enum Literal {
     Bool(bool),
 }
 
+impl Literal {
+    // Метод для извлечения строки из варианта Literal::String
+    pub fn get_first_name_as_string(&self) -> String {
+        match self {
+            Literal::Identifier {
+                first_name,
+                second_name: None,
+                third_name: None,
+            } => first_name.to_string(),
+            _ => panic!("Unexpected literal: {:?}", self),
+        }
+    }
+}
+
 #[derive(Debug, PartialEq, Clone, Copy)]
 pub enum Type {
     Int,

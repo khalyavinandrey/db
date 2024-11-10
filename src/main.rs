@@ -1,4 +1,5 @@
 mod parser;
+mod analyzer;
 
 fn main() {
     print!("{}", 1);
